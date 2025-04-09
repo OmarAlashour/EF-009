@@ -5,10 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EF009.BasicSetup.Entities
 {
-    [Table("Orders", Schema = "Sales")]
     public class Order
     {
-        [Key]
         public int Id { get; set; }
         public string CustomerEmail { get; set; }
         public DateTime OrderDate { get; set; }

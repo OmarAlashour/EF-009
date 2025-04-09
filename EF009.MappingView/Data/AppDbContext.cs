@@ -16,9 +16,13 @@ namespace EF009.MappingView.Data
                 .ToTable("Products", schema: "Inventory")
                 .HasKey(x => x.Id);
 
+            modelBuilder.Entity<Order>()
+            .ToTable("Orders", schema: "Sales")
+            .HasKey(x => x.Id);
+
             modelBuilder.Entity<OrderDetail>()
               .ToTable("OrderDetails", schema: "Sales")
-              .HasKey(x => x.Id);
+              .HasKey(od => new { od.Id, od.OrderId }); // Define composite key
 
             modelBuilder.Entity<OrderWithDetailsView>()
                 .ToView("OrderWithDetailsView")

@@ -22,7 +22,7 @@ namespace EF009.BasicSetup.Data
 
             modelBuilder.Entity<OrderDetail>()
               .ToTable("OrderDetails", schema: "Sales")
-              .HasKey(x => x.Id);
+              .HasKey(od => new { od.Id, od.OrderId }); // Define composite key
 
             // modelBuilder.HasDefaultSchema("Sales");
 

@@ -5,8 +5,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EF009.MappingView.Entities
 {
-    [PrimaryKey("Id")]
-    [Table("Orders", Schema = "Sales")]
     public class Order
     {
         public int Id { get; set; }
